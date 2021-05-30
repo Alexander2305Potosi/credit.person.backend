@@ -2,6 +2,9 @@ package com.credit.person.dto;
 
 import java.io.Serializable;
 
+import lombok.Value;
+
+@Value
 public class CreditPersonDTO implements Serializable {
 	
 	
@@ -16,8 +19,8 @@ public class CreditPersonDTO implements Serializable {
 	private long idTypeIdentification;
 	private String nameIdTypeIdentification;
 	private long idCredit;
-	private String totalCost;
-	private String totalFee;
+	private int totalCost;
+	private int totalFee;
 	private long idCity;
 	private String nameCity;
 	private long idSuburb;
@@ -83,19 +86,19 @@ public class CreditPersonDTO implements Serializable {
 		this.idCredit = idCredit;
 	}
 
-	public String getTotalCost() {
+	public int getTotalCost() {
 		return totalCost;
 	}
 
-	public void setTotalCost(String totalCost) {
+	public void setTotalCost(int totalCost) {
 		this.totalCost = totalCost;
 	}
 
-	public String getTotalFee() {
+	public int getTotalFee() {
 		return totalFee;
 	}
 
-	public void setTotalFee(String totalFee) {
+	public void setTotalFee(int totalFee) {
 		this.totalFee = totalFee;
 	}
 

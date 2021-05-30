@@ -14,10 +14,10 @@ public class Credit {
 	private long idCredit;
 	
 	@Column("total_cost")
-	private String totalCost;
+	private int totalCost;
 
 	@Column("total_fee")
-	private String totalFee;
+	private int totalFee;
 
 	@Column("id_person")
 	private long idPerson;
@@ -31,19 +31,19 @@ public class Credit {
 		this.idCredit = idCredit;
 	}
 
-	public String getTotalCost() {
+	public int getTotalCost() {
 		return totalCost;
 	}
 
-	public void setTotalCost(String totalCost) {
+	public void setTotalCost(int totalCost) {
 		this.totalCost = totalCost;
 	}
 
-	public String getTotalFee() {
+	public int getTotalFee() {
 		return totalFee;
 	}
 
-	public void setTotalFee(String totalFee) {
+	public void setTotalFee(int totalFee) {
 		this.totalFee = totalFee;
 	}
 

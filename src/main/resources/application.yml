@@ -1,9 +1,9 @@
 spring:
-  profiles: dev
   r2dbc:
     url: r2dbc:mysql://localhost:3306/credit
     username: root
-#    password: root
+#    password: postgres
 logging:
   level:
-    org.springframework.data.r2dbc: Debug
+    io.r2dbc.postgresql.QUERY: DEBUG # for queries
+    io.r2dbc.postgresql.PARAM: DEBUG # for parameters

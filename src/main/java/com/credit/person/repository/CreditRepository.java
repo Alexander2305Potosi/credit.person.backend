@@ -1,6 +1,5 @@
 package com.credit.person.repository;
 
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
@@ -32,8 +31,8 @@ public interface CreditRepository extends ReactiveCrudRepository<CreditPersonDTO
 	 		+ "        INNER JOIN"
 	 		+ "    city ct ON ct.id_city = p.id_city_location"
 	 		+ "    INNER JOIN"
-	 		+ "    suburb s ON s.id_suburb = p.id_suburb_location")
-	 Flux<CreditPersonDTO> findCreditAll(Pageable page);
+	 		+ "    suburb s ON s.id_suburb = p.id_suburb_location AND (p.name LIKE CONCAT('%', :filter , '%') OR p.last_name LIKE CONCAT('%', :filter , '%') OR p.number_identification LIKE CONCAT('%', :filter , '%') )")
+	 Flux<CreditPersonDTO> findCreditAll(String filter);
 	 
 	 
 }

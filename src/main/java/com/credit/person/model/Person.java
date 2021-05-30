@@ -18,13 +18,13 @@ public class Person {
 	private String lastName;
 	
 	@Column("number_phone")
-	private String numberPhone;
+	private int numberPhone;
 	
 	@Column("email")
 	private String email;
 	
 	@Column("number_identification")
-	private String numberIdentification;
+	private int numberIdentification;
 	
 	@Column("id_type_identification")
 	private long idTypeIdentification;
@@ -63,11 +63,11 @@ public class Person {
 		this.lastName = lastName;
 	}
 
-	public String getNumberPhone() {
+	public int getNumberPhone() {
 		return numberPhone;
 	}
 
-	public void setNumberPhone(String numberPhone) {
+	public void setNumberPhone(int numberPhone) {
 		this.numberPhone = numberPhone;
 	}
 
@@ -79,11 +79,11 @@ public class Person {
 		this.email = email;
 	}
 
-	public String getNumberIdentification() {
+	public int getNumberIdentification() {
 		return numberIdentification;
 	}
 
-	public void setNumberIdentification(String numberIdentification) {
+	public void setNumberIdentification(int numberIdentification) {
 		this.numberIdentification = numberIdentification;
 	}
 
