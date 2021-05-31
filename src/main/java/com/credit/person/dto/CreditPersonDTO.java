@@ -2,9 +2,6 @@ package com.credit.person.dto;
 
 import java.io.Serializable;
 
-import lombok.Value;
-
-@Value
 public class CreditPersonDTO implements Serializable {
 	
 	

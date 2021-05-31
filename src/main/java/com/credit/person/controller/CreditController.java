@@ -1,8 +1,6 @@
 package com.credit.person.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.credit.person.dto.CreditPersonDTO;
 import com.credit.person.model.Credit;
 import com.credit.person.service.CreditService;
-import com.credit.person.util.ResponseEntity;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

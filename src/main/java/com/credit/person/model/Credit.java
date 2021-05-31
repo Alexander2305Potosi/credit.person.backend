@@ -9,7 +9,6 @@ import org.springframework.data.relational.core.mapping.Column;
 public class Credit {
 	
 	@Id
-//	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column("id_credit")
 	private long idCredit;
 	
