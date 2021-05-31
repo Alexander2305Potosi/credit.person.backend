@@ -1,6 +1,7 @@
 package com.credit.person.service;
 
 import java.util.ArrayList;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageImpl;
@@ -32,21 +33,21 @@ public class CreditService {
 	 return creditRepository.findCreditAll(filter);
 	}
 
-	public Flux<CreditPersonDTO> findById(String idPerson) {
-		return creditRepository.findAll();
-	}
-
 	public Mono<Credit> save(Credit credit) {
-//		credit.setIdCredit(personRepository.count().ma);
+//		 Long idLastCredit = personRepository.count();
+//		credit.setIdCredit(idLastCredit++);
 		return personRepository.save(credit);
 	}
 
 	public Mono<Credit> update(Credit credit) {
 		return personRepository.findById(credit.getIdCredit()).flatMap(dbCredit -> {
 			dbCredit.setTotalCost(credit.getTotalCost());
-			dbCredit.setTotalFee(credit.getTotalFee());
 			return personRepository.save(dbCredit);
 		});
+	}
+
+	public Mono<Void> delete(long idCredit) {
+		return personRepository.deleteById(idCredit);
 	}
 
 }

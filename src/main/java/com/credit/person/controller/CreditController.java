@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,11 +37,6 @@ public class CreditController {
 		return creditService.findAll(filter);
 	}
 
-	@GetMapping("/{idPerson}")
-	public Flux<CreditPersonDTO> getcredit(@PathVariable("idPerson") String idPerson) {
-		return creditService.findById(idPerson);
-	}
-
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public Mono<Credit> savecredit(@RequestBody Credit credit) {
@@ -53,4 +49,8 @@ public class CreditController {
 		return creditService.update(credit);
 	}
 
+	@DeleteMapping("/{idCredit}")
+	public Mono<Void> updatecredit(@PathVariable long idCredit) {
+		return creditService.delete(idCredit);
+	}
 }
