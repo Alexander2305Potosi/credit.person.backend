@@ -25,8 +25,8 @@ public class CreditService {
 	}
 
 	public Mono<Credit> save(Credit credit) {
-		return personRepository.count().flatMap(num -> {
-			credit.setIdCredit(num.longValue());
+		return personRepository.findAll().last().flatMap(num -> {
+			credit.setIdCredit(num.getIdCredit()+1);
 			  return this.personRepository.save(credit);
 		}).switchIfEmpty(this.personRepository.save(credit.setAsNew()));
 	}
